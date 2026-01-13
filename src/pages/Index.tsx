@@ -4,7 +4,8 @@ import WelcomeScreen from "@/components/WelcomeScreen";
 import QuestionCard from "@/components/QuestionCard";
 import ResultScreen from "@/components/ResultScreen";
 import ProgressBar from "@/components/ProgressBar";
-import { NAIL_SHAPES, QUIZ_QUESTIONS } from "@/data/quizData";
+import { NAIL_SHAPES, QUIZ_QUESTIONS, QuizQuestion } from "@/data/quizData";
+import { shuffleArray } from "@/lib/utils"; // Import shuffleArray
 
 type QuizStep = "welcome" | "quiz" | "results";
 
@@ -17,6 +18,7 @@ const Index: React.FC = () => {
     return initialScores;
   });
   const [recommendedShape, setRecommendedShape] = useState<string | null>(null);
+  const [shuffledQuizQuestions, setShuffledQuizQuestions] = useState<QuizQuestion[]>([]);
 
   const startQuiz = () => {
     setCurrentQuestionIndex(0);
@@ -24,10 +26,17 @@ const Index: React.FC = () => {
     NAIL_SHAPES.forEach((shape) => (initialScores[shape] = 0));
     setScores(initialScores);
     setRecommendedShape(null);
+
+    // Deep copy and shuffle answers for each question
+    const questionsWithShuffledAnswers = QUIZ_QUESTIONS.map(question => ({
+      ...question,
+      answers: shuffleArray(question.answers),
+    }));
+    setShuffledQuizQuestions(questionsWithShuffledAnswers);
+
     setCurrentStep("quiz");
   };
 
-  // Updated handleAnswer to use associatedNailShape
   const handleAnswer = (associatedNailShape: string) => {
     setScores((prevScores) => {
       const newScores = { ...prevScores };
@@ -36,7 +45,7 @@ const Index: React.FC = () => {
     });
 
     const nextQuestionIndex = currentQuestionIndex + 1;
-    if (nextQuestionIndex < QUIZ_QUESTIONS.length) {
+    if (nextQuestionIndex < shuffledQuizQuestions.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
       calculateFinalResult();
@@ -69,7 +78,7 @@ const Index: React.FC = () => {
         {currentStep === "quiz" && (
           <ProgressBar
             current={currentQuestionIndex + 1}
-            total={QUIZ_QUESTIONS.length}
+            total={shuffledQuizQuestions.length}
           />
         )}
 
@@ -78,12 +87,12 @@ const Index: React.FC = () => {
             <WelcomeScreen onStartQuiz={startQuiz} />
           </div>
         )}
-        {currentStep === "quiz" && (
+        {currentStep === "quiz" && shuffledQuizQuestions.length > 0 && (
           <div key={`question-${currentQuestionIndex}`} className="animate-in fade-in duration-500">
             <QuestionCard
-              question={QUIZ_QUESTIONS[currentQuestionIndex]}
+              question={shuffledQuizQuestions[currentQuestionIndex]}
               questionNumber={currentQuestionIndex + 1}
-              totalQuestions={QUIZ_QUESTIONS.length}
+              totalQuestions={shuffledQuizQuestions.length}
               onAnswer={handleAnswer}
             />
           </div>
