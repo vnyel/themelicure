@@ -84,7 +84,7 @@ const Index: React.FC = () => {
         <img
           src="/images/melicure-logo.png"
           alt="The Melicure Logo"
-          className="h-16 sm:h-20 object-contain"
+          className="h-32 sm:h-40 object-contain"
         />
       </div>
       <div className="flex-grow flex flex-col items-center justify-center w-full">
