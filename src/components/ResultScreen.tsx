@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import ButtonWithFairyDust from "@/components/ButtonWithFairyDust"; // Use the new component
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
 import { NAIL_SHAPE_DESCRIPTION_KEYS } from "@/data/quizData";
@@ -14,7 +14,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ recommendedShape, onRetakeQ
   const { t } = useTranslation();
   const descriptionKey = NAIL_SHAPE_DESCRIPTION_KEYS[recommendedShape];
   const description = t(descriptionKey) || t("nailShapes.Almond_description");
-  const imagePath = `/images/nail-shapes/${recommendedShape.toLowerCase()}.jpg`; // Construct image path
+  const imagePath = `/images/nail-shapes/${recommendedShape.toLowerCase()}.jpg`;
 
   return (
     <Card className="w-full max-w-lg mx-auto text-center rounded-xl shadow-lg p-6 bg-white animate-in fade-in duration-500">
@@ -37,7 +37,6 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ recommendedShape, onRetakeQ
         <p className="text-sm sm:text-md text-gray-700 leading-relaxed">
           {description}
         </p>
-        {/* Display the nail shape image */}
         <div className="nail-shape-image-container w-full max-w-xs h-auto rounded-lg overflow-hidden shadow-md border border-gray-200">
           <img
             src={imagePath}
@@ -45,12 +44,12 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ recommendedShape, onRetakeQ
             className="w-full h-full object-cover"
           />
         </div>
-        <Button
+        <ButtonWithFairyDust // Use ButtonWithFairyDust here
           onClick={onRetakeQuiz}
           className="w-full max-w-xs py-3 text-lg rounded-full bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 hover:from-gray-300 hover:to-gray-400 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
         >
           {t("common.retakeQuiz")}
-        </Button>
+        </ButtonWithFairyDust>
       </CardContent>
     </Card>
   );
