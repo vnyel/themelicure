@@ -3,11 +3,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { Suspense, lazy } from "react"; // Import Suspense and lazy
-import LoadingScreen from "./components/LoadingScreen"; // Import the new LoadingScreen
+import React, { Suspense, lazy } from "react";
+import LoadingScreen from "./components/LoadingScreen";
+import CursorTrail from "./components/CursorTrail"; // Import the new CursorTrail component
 
-const Index = lazy(() => import("./pages/Index")); // Lazily load the Index page
-const NotFound = lazy(() => import("./pages/NotFound")); // Lazily load the NotFound page
+const Index = lazy(() => import("./pages/Index"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -17,7 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Suspense fallback={<LoadingScreen />}> {/* Use Suspense with LoadingScreen as fallback */}
+        <Suspense fallback={<LoadingScreen />}>
           <Routes>
             <Route path="/" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
@@ -26,6 +27,7 @@ const App = () => (
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
+    <CursorTrail /> {/* Add the CursorTrail component here */}
   </QueryClientProvider>
 );
 
