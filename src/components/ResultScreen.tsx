@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
+import { NAIL_SHAPE_DESCRIPTIONS } from "@/data/quizData"; // Import descriptions
 
 interface ResultScreenProps {
   recommendedShape: string;
@@ -9,6 +10,8 @@ interface ResultScreenProps {
 }
 
 const ResultScreen: React.FC<ResultScreenProps> = ({ recommendedShape, onRetakeQuiz }) => {
+  const description = NAIL_SHAPE_DESCRIPTIONS[recommendedShape] || "A beautiful shape perfectly suited for you!";
+
   return (
     <Card className="w-full max-w-lg mx-auto text-center rounded-xl shadow-lg p-6 bg-white animate-in fade-in duration-500">
       <CardHeader>
@@ -28,8 +31,12 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ recommendedShape, onRetakeQ
           </p>
         </div>
         <p className="text-sm sm:text-md text-gray-700 leading-relaxed">
-          This shape is perfectly suited to your unique style and needs.
+          {description}
         </p>
+        {/* Placeholder for future nail shape image */}
+        <div className="nail-shape-image-container w-48 h-32 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-sm italic border border-dashed border-gray-300">
+          Image of {recommendedShape} Nail Shape
+        </div>
         <Button
           onClick={onRetakeQuiz}
           className="w-full max-w-xs py-3 text-lg rounded-full bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 hover:from-gray-300 hover:to-gray-400 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"

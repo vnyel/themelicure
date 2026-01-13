@@ -118,3 +118,14 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
   },
 ];
+
+export const NAIL_SHAPE_DESCRIPTIONS: { [key: string]: string } = {
+  Almond: "Elegant and sophisticated, the almond shape elongates fingers and adds a touch of classic glamour, perfect for a refined look.",
+  Square: "Strong and modern, square nails offer a clean, crisp edge that's both practical and stylish, ideal for those who prefer a bold, structured aesthetic.",
+  Squoval: "The best of both worlds, squoval nails combine the strength of square with the softness of oval, offering a versatile and universally flattering shape.",
+  Coffin: "Dramatic and chic, coffin (or ballerina) nails are tapered with a flat tip, exuding confidence and a high-fashion appeal for the trendsetter.",
+  Stiletto: "Bold and edgy, stiletto nails are sharply pointed, making a powerful statement and creating the illusion of extra-long, slender fingers.",
+  Oval: "Classic and graceful, oval nails are soft and feminine, flattering most hand shapes by elongating fingers with a gentle, rounded curve.",
+  Round: "Simple and practical, round nails are low-maintenance and durable, perfect for those who prefer a natural look and active lifestyle.",
+  Ballerina: "Similar to coffin but often slightly more tapered, ballerina nails are elegant and sophisticated, offering a chic, elongated look with a flat, squared-off tip.",
+};
