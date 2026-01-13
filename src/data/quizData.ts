@@ -11,7 +11,7 @@ export const NAIL_SHAPES = [
 
 export interface QuizOption {
   answerText: string;
-  associatedNailShape: string; // Changed from scoreImpact
+  associatedNailShape: string;
 }
 
 export interface QuizQuestion {
@@ -103,6 +103,48 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       { answerText: "Soft & approachable", associatedNailShape: "Oval" },
       { answerText: "Simple & natural", associatedNailShape: "Round" },
       { answerText: "Fun & fashionable", associatedNailShape: "Ballerina" },
+    ],
+  },
+  {
+    id: "q7",
+    questionText: "What’s your favorite fashion accessory?",
+    answers: [
+      { answerText: "Delicate rings", associatedNailShape: "Almond" },
+      { answerText: "Watches", associatedNailShape: "Square" },
+      { answerText: "Bracelets", associatedNailShape: "Squoval" },
+      { answerText: "Statement rings", associatedNailShape: "Coffin" },
+      { answerText: "Bold cuffs", associatedNailShape: "Stiletto" },
+      { answerText: "Subtle jewelry", associatedNailShape: "Oval" },
+      { answerText: "Minimalist bands", associatedNailShape: "Round" },
+      { answerText: "Trendy charms", associatedNailShape: "Ballerina" },
+    ],
+  },
+  {
+    id: "q8",
+    questionText: "How often do you get your nails done?",
+    answers: [
+      { answerText: "Every 2–3 weeks", associatedNailShape: "Almond" },
+      { answerText: "Once a month", associatedNailShape: "Square" },
+      { answerText: "Every 3 weeks", associatedNailShape: "Squoval" },
+      { answerText: "Every 2 weeks", associatedNailShape: "Coffin" },
+      { answerText: "Weekly or biweekly", associatedNailShape: "Stiletto" },
+      { answerText: "Every 3–4 weeks", associatedNailShape: "Oval" },
+      { answerText: "Once a month or less", associatedNailShape: "Round" },
+      { answerText: "Every 2–3 weeks", associatedNailShape: "Ballerina" },
+    ],
+  },
+  {
+    id: "q9",
+    questionText: "Which nail look inspires you most?",
+    answers: [
+      { answerText: "Classic elegance", associatedNailShape: "Almond" },
+      { answerText: "Chic simplicity", associatedNailShape: "Square" },
+      { answerText: "Balanced everyday look", associatedNailShape: "Squoval" },
+      { answerText: "Fashion-forward trends", associatedNailShape: "Coffin" },
+      { answerText: "Glamorous and daring", associatedNailShape: "Stiletto" },
+      { answerText: "Soft, natural vibe", associatedNailShape: "Oval" },
+      { answerText: "Clean & minimal", associatedNailShape: "Round" },
+      { answerText: "Playful & trendy", associatedNailShape: "Ballerina" },
     ],
   },
 ];
