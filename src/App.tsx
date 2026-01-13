@@ -5,7 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import LoadingScreen from "./components/LoadingScreen";
-import CursorTrail from "./components/CursorTrail"; // Import the new CursorTrail component
+import CursorTrail from "./components/CursorTrail";
+import { Analytics } from "@vercel/analytics/react"; // Corrected import for React
 
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -27,7 +28,8 @@ const App = () => (
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
-    <CursorTrail /> {/* Add the CursorTrail component here */}
+    <CursorTrail />
+    <Analytics /> {/* Add the Analytics component here */}
   </QueryClientProvider>
 );
 
