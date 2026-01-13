@@ -7,7 +7,7 @@ interface QuestionCardProps {
   question: QuizQuestion;
   questionNumber: number;
   totalQuestions: number;
-  onAnswer: (weights: { [key: string]: number }) => void;
+  onAnswer: (scoreImpact: { [key: string]: number }) => void;
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -23,17 +23,17 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           Question {questionNumber} of {totalQuestions}
         </CardTitle>
         <CardDescription className="text-xl text-gray-700 font-medium">
-          {question.question}
+          {question.questionText}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center space-y-4">
-        {question.options.map((option: QuizOption, index: number) => (
+        {question.answers.map((option: QuizOption, index: number) => (
           <Button
             key={index}
-            onClick={() => onAnswer(option.weights)}
+            onClick={() => onAnswer(option.scoreImpact)}
             className="w-full py-3 text-lg rounded-full bg-gray-100 text-gray-800 border border-gray-200 hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md"
           >
-            {option.text}
+            {option.answerText}
           </Button>
         ))}
       </CardContent>

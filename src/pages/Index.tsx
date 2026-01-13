@@ -26,12 +26,13 @@ const Index: React.FC = () => {
     setCurrentStep("quiz");
   };
 
-  const handleAnswer = (weights: { [key: string]: number }) => {
+  // Helper function: updateScore(scoreImpact)
+  const handleAnswer = (scoreImpact: { [key: string]: number }) => {
     setScores((prevScores) => {
       const newScores = { ...prevScores };
-      for (const shape in weights) {
+      for (const shape in scoreImpact) {
         if (newScores.hasOwnProperty(shape)) {
-          newScores[shape] += weights[shape];
+          newScores[shape] += scoreImpact[shape];
         }
       }
       return newScores;
@@ -41,11 +42,12 @@ const Index: React.FC = () => {
     if (nextQuestionIndex < QUIZ_QUESTIONS.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
-      calculateResult();
+      calculateFinalResult();
     }
   };
 
-  const calculateResult = () => {
+  // Helper function: calculateFinalResult()
+  const calculateFinalResult = () => {
     let maxScore = -1;
     let winningShape: string | null = null;
 
