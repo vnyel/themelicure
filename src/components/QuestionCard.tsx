@@ -7,7 +7,7 @@ interface QuestionCardProps {
   question: QuizQuestion;
   questionNumber: number;
   totalQuestions: number;
-  onAnswer: (scoreImpact: { [key: string]: number }) => void;
+  onAnswer: (associatedNailShape: string) => void; // Changed prop type
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -30,7 +30,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         {question.answers.map((option: QuizOption, index: number) => (
           <Button
             key={index}
-            onClick={() => onAnswer(option.scoreImpact)}
+            onClick={() => onAnswer(option.associatedNailShape)} // Pass associatedNailShape
             className="w-full py-3 text-base sm:text-lg rounded-full bg-gray-100 text-gray-800 border border-gray-200 hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md"
           >
             {option.answerText}

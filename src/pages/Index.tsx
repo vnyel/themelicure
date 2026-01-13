@@ -3,7 +3,7 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import WelcomeScreen from "@/components/WelcomeScreen";
 import QuestionCard from "@/components/QuestionCard";
 import ResultScreen from "@/components/ResultScreen";
-import ProgressBar from "@/components/ProgressBar"; // Import the new ProgressBar
+import ProgressBar from "@/components/ProgressBar";
 import { NAIL_SHAPES, QUIZ_QUESTIONS } from "@/data/quizData";
 
 type QuizStep = "welcome" | "quiz" | "results";
@@ -27,14 +27,11 @@ const Index: React.FC = () => {
     setCurrentStep("quiz");
   };
 
-  const handleAnswer = (scoreImpact: { [key: string]: number }) => {
+  // Updated handleAnswer to use associatedNailShape
+  const handleAnswer = (associatedNailShape: string) => {
     setScores((prevScores) => {
       const newScores = { ...prevScores };
-      for (const shape in scoreImpact) {
-        if (newScores.hasOwnProperty(shape)) {
-          newScores[shape] += scoreImpact[shape];
-        }
-      }
+      newScores[associatedNailShape] = (newScores[associatedNailShape] || 0) + 1;
       return newScores;
     });
 
@@ -50,6 +47,7 @@ const Index: React.FC = () => {
     let maxScore = -1;
     let winningShape: string | null = null;
 
+    // Iterate through NAIL_SHAPES to apply tie-break rule (first in ordered list)
     for (const shape of NAIL_SHAPES) {
       const score = scores[shape];
       if (score > maxScore) {
