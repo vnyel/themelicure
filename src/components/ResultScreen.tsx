@@ -10,24 +10,24 @@ interface ResultScreenProps {
 
 const ResultScreen: React.FC<ResultScreenProps> = ({ recommendedShape, onRetakeQuiz }) => {
   return (
-    <Card className="w-full max-w-lg mx-auto text-center rounded-xl shadow-lg p-6 bg-white">
+    <Card className="w-full max-w-lg mx-auto text-center rounded-xl shadow-lg p-6 bg-white animate-in fade-in duration-500">
       <CardHeader>
-        <CardTitle className="text-4xl font-bold text-gray-800 mb-2 flex items-center justify-center gap-2">
+        <CardTitle className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2 flex items-center justify-center gap-2">
           <Sparkles className="text-pink-400" size={36} />
           Your Perfect Nail Shape!
           <Sparkles className="text-pink-400" size={36} />
         </CardTitle>
-        <CardDescription className="text-lg text-gray-600">
+        <CardDescription className="text-base sm:text-lg text-gray-600">
           Based on your answers, we recommend:
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center space-y-6">
         <div className="bg-gradient-to-r from-pink-100 to-purple-100 p-6 rounded-full shadow-inner">
-          <p className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 animate-pulse">
+          <p className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 animate-pulse">
             {recommendedShape}
           </p>
         </div>
-        <p className="text-md text-gray-700 leading-relaxed">
+        <p className="text-sm sm:text-md text-gray-700 leading-relaxed">
           This shape is perfectly suited to your unique style and needs.
         </p>
         <Button

@@ -17,12 +17,12 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   onAnswer,
 }) => {
   return (
-    <Card className="w-full max-w-lg mx-auto text-center rounded-xl shadow-lg p-6 bg-white">
+    <Card className="w-full max-w-lg mx-auto text-center rounded-xl shadow-lg p-6 bg-white animate-in fade-in duration-500">
       <CardHeader>
-        <CardTitle className="text-2xl font-semibold text-gray-800 mb-2">
+        <CardTitle className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">
           Question {questionNumber} of {totalQuestions}
         </CardTitle>
-        <CardDescription className="text-xl text-gray-700 font-medium">
+        <CardDescription className="text-lg sm:text-xl text-gray-700 font-medium">
           {question.questionText}
         </CardDescription>
       </CardHeader>
@@ -31,7 +31,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           <Button
             key={index}
             onClick={() => onAnswer(option.scoreImpact)}
-            className="w-full py-3 text-lg rounded-full bg-gray-100 text-gray-800 border border-gray-200 hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md"
+            className="w-full py-3 text-base sm:text-lg rounded-full bg-gray-100 text-gray-800 border border-gray-200 hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md"
           >
             {option.answerText}
           </Button>

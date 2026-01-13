@@ -3,6 +3,7 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import WelcomeScreen from "@/components/WelcomeScreen";
 import QuestionCard from "@/components/QuestionCard";
 import ResultScreen from "@/components/ResultScreen";
+import ProgressBar from "@/components/ProgressBar"; // Import the new ProgressBar
 import { NAIL_SHAPES, QUIZ_QUESTIONS } from "@/data/quizData";
 
 type QuizStep = "welcome" | "quiz" | "results";
@@ -26,7 +27,6 @@ const Index: React.FC = () => {
     setCurrentStep("quiz");
   };
 
-  // Helper function: updateScore(scoreImpact)
   const handleAnswer = (scoreImpact: { [key: string]: number }) => {
     setScores((prevScores) => {
       const newScores = { ...prevScores };
@@ -46,12 +46,10 @@ const Index: React.FC = () => {
     }
   };
 
-  // Helper function: calculateFinalResult()
   const calculateFinalResult = () => {
     let maxScore = -1;
     let winningShape: string | null = null;
 
-    // Iterate through NAIL_SHAPES to maintain tie-breaking order
     for (const shape of NAIL_SHAPES) {
       const score = scores[shape];
       if (score > maxScore) {
@@ -69,18 +67,33 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 to-purple-50 p-4">
-      <div className="flex-grow flex items-center justify-center w-full">
-        {currentStep === "welcome" && <WelcomeScreen onStartQuiz={startQuiz} />}
+      <div className="flex-grow flex flex-col items-center justify-center w-full">
         {currentStep === "quiz" && (
-          <QuestionCard
-            question={QUIZ_QUESTIONS[currentQuestionIndex]}
-            questionNumber={currentQuestionIndex + 1}
-            totalQuestions={QUIZ_QUESTIONS.length}
-            onAnswer={handleAnswer}
+          <ProgressBar
+            current={currentQuestionIndex + 1}
+            total={QUIZ_QUESTIONS.length}
           />
         )}
+
+        {currentStep === "welcome" && (
+          <div key="welcome-screen" className="animate-in fade-in duration-500">
+            <WelcomeScreen onStartQuiz={startQuiz} />
+          </div>
+        )}
+        {currentStep === "quiz" && (
+          <div key={`question-${currentQuestionIndex}`} className="animate-in fade-in duration-500">
+            <QuestionCard
+              question={QUIZ_QUESTIONS[currentQuestionIndex]}
+              questionNumber={currentQuestionIndex + 1}
+              totalQuestions={QUIZ_QUESTIONS.length}
+              onAnswer={handleAnswer}
+            />
+          </div>
+        )}
         {currentStep === "results" && recommendedShape && (
-          <ResultScreen recommendedShape={recommendedShape} onRetakeQuiz={retakeQuiz} />
+          <div key="result-screen" className="animate-in fade-in duration-500">
+            <ResultScreen recommendedShape={recommendedShape} onRetakeQuiz={retakeQuiz} />
+          </div>
         )}
       </div>
       <MadeWithDyad />

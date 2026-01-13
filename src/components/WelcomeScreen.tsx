@@ -8,17 +8,17 @@ interface WelcomeScreenProps {
 
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStartQuiz }) => {
   return (
-    <Card className="w-full max-w-lg mx-auto text-center rounded-xl shadow-lg p-6 bg-white">
+    <Card className="w-full max-w-lg mx-auto text-center rounded-xl shadow-lg p-6 bg-white animate-in fade-in duration-500">
       <CardHeader>
-        <CardTitle className="text-4xl font-bold text-gray-800 mb-2">
+        <CardTitle className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
           Discover Your Perfect Nail Shape
         </CardTitle>
-        <CardDescription className="text-lg text-gray-600">
+        <CardDescription className="text-base sm:text-lg text-gray-600">
           Take this quick quiz to find the ideal nail shape that complements your personality, style, and lifestyle.
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center space-y-6">
-        <p className="text-md text-gray-700 leading-relaxed">
+        <p className="text-sm sm:text-md text-gray-700 leading-relaxed">
           Our professional recommendation system will guide you through a series of questions to match you with one of 8 elegant nail shapes.
         </p>
         <Button
