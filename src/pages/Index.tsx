@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MadeByMelicure } from "@/components/MadeByMelicure"; // Updated import
+import { MadeByMelicure } from "@/components/MadeByMelicure";
 import WelcomeScreen from "@/components/WelcomeScreen";
 import QuestionCard from "@/components/QuestionCard";
 import ResultScreen from "@/components/ResultScreen";
@@ -79,6 +79,13 @@ const Index: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 to-purple-50 p-4">
       <div className="absolute top-4 right-4 z-10">
         <LanguageToggle />
+      </div>
+      <div className="w-full flex justify-center mt-4 mb-8"> {/* Container for the logo */}
+        <img
+          src="/images/melicure-logo.png"
+          alt="The Melicure Logo"
+          className="h-16 sm:h-20 object-contain"
+        />
       </div>
       <div className="flex-grow flex flex-col items-center justify-center w-full">
         {currentStep === "quiz" && (
