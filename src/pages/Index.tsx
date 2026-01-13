@@ -4,12 +4,15 @@ import WelcomeScreen from "@/components/WelcomeScreen";
 import QuestionCard from "@/components/QuestionCard";
 import ResultScreen from "@/components/ResultScreen";
 import ProgressBar from "@/components/ProgressBar";
+import LanguageToggle from "@/components/LanguageToggle"; // Import LanguageToggle
 import { NAIL_SHAPES, QUIZ_QUESTIONS, QuizQuestion } from "@/data/quizData";
 import { shuffleArray } from "@/lib/utils"; // Import shuffleArray
+import { useTranslation } from "react-i18next"; // Import useTranslation
 
 type QuizStep = "welcome" | "quiz" | "results";
 
 const Index: React.FC = () => {
+  const { t } = useTranslation(); // Initialize useTranslation
   const [currentStep, setCurrentStep] = useState<QuizStep>("welcome");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [scores, setScores] = useState<{ [key: string]: number }>(() => {
@@ -74,6 +77,9 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 to-purple-50 p-4">
+      <div className="absolute top-4 right-4 z-10">
+        <LanguageToggle />
+      </div>
       <div className="flex-grow flex flex-col items-center justify-center w-full">
         {currentStep === "quiz" && (
           <ProgressBar

@@ -10,152 +10,152 @@ export const NAIL_SHAPES = [
 ];
 
 export interface QuizOption {
-  answerText: string;
+  answerKey: string; // Changed to key for translation
   associatedNailShape: string;
 }
 
 export interface QuizQuestion {
   id: string;
-  questionText: string;
+  questionKey: string; // Changed to key for translation
   answers: QuizOption[];
 }
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: "q1",
-    questionText: "Your friends want to go outside. Which activity are you suggesting?",
+    questionKey: "quizQuestions.q1_question",
     answers: [
-      { answerText: "Taking a walk around the block", associatedNailShape: "Round" },
-      { answerText: "Drinking a coffee at your favourite café", associatedNailShape: "Almond" },
-      { answerText: "Shoppinggg!", associatedNailShape: "Square" },
-      { answerText: "Playing football or basketball", associatedNailShape: "Squoval" },
-      { answerText: "Let's get a little tipsy🍷", associatedNailShape: "Stiletto" },
-      { answerText: "How about going to the cinema?!", associatedNailShape: "Ballerina" },
-      { answerText: "A completely spontaneous road trip", associatedNailShape: "Coffin" },
-      { answerText: "To the taverna we go", associatedNailShape: "Oval" }
+      { answerKey: "quizQuestions.q1_answer1", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q1_answer2", associatedNailShape: "Almond" },
+      { answerKey: "quizQuestions.q1_answer3", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q1_answer4", associatedNailShape: "Squoval" },
+      { answerKey: "quizQuestions.q1_answer5", associatedNailShape: "Stiletto" },
+      { answerKey: "quizQuestions.q1_answer6", associatedNailShape: "Ballerina" },
+      { answerKey: "quizQuestions.q1_answer7", associatedNailShape: "Coffin" },
+      { answerKey: "quizQuestions.q1_answer8", associatedNailShape: "Oval" }
     ]
   },
   {
     id: "q2",
-    questionText: "It's a rainy Sunday. What do you do?",
+    questionKey: "quizQuestions.q2_question",
     answers: [
-      { answerText: "Read a book", associatedNailShape: "Oval" },
-      { answerText: "Scroll on Pinterest and listen to my favorite songs", associatedNailShape: "Round" },
-      { answerText: "Go outside because I actually enjoy the rain!", associatedNailShape: "Coffin" },
-      { answerText: "Have some quality time with my family", associatedNailShape: "Squoval" },
-      { answerText: "Watch my comfort series/movies", associatedNailShape: "Ballerina" },
-      { answerText: "Seems like a perfect day to clean the house!", associatedNailShape: "Square" },
-      { answerText: "Try out new make-up, hairstyles and outfits", associatedNailShape: "Stiletto" },
-      { answerText: "Probably finding out about a new topic and falling into a rabbit hole online", associatedNailShape: "Almond" }
+      { answerKey: "quizQuestions.q2_answer1", associatedNailShape: "Oval" },
+      { answerKey: "quizQuestions.q2_answer2", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q2_answer3", associatedNailShape: "Coffin" },
+      { answerKey: "quizQuestions.q2_answer4", associatedNailShape: "Squoval" },
+      { answerKey: "quizQuestions.q2_answer5", associatedNailShape: "Ballerina" },
+      { answerKey: "quizQuestions.q2_answer6", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q2_answer7", associatedNailShape: "Stiletto" },
+      { answerKey: "quizQuestions.q2_answer8", associatedNailShape: "Almond" }
     ]
   },
   {
     id: "q3",
-    questionText: "What's something you're really good at?",
+    questionKey: "quizQuestions.q3_question",
     answers: [
-      { answerText: "I have a good intuition about the character of a person I just met", associatedNailShape: "Oval" },
-      { answerText: "I can be really organized", associatedNailShape: "Square" },
-      { answerText: "People tell me I have a charming character so I get along easily with anybody", associatedNailShape: "Round" },
-      { answerText: "I'm a pretty sporty person", associatedNailShape: "Squoval" },
-      { answerText: "I'm really creative", associatedNailShape: "Almond" },
-      { answerText: "I'm extroverted and brave. If I really want something, I will find ways to get it", associatedNailShape: "Stiletto" },
-      { answerText: "I'm really good at cooking and baking", associatedNailShape: "Ballerina" },
-      { answerText: "I'm a trendsetter. When I do or wear something, people will follow", associatedNailShape: "Coffin" }
+      { answerKey: "quizQuestions.q3_answer1", associatedNailShape: "Oval" },
+      { answerKey: "quizQuestions.q3_answer2", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q3_answer3", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q3_answer4", associatedNailShape: "Squoval" },
+      { answerKey: "quizQuestions.q3_answer5", associatedNailShape: "Almond" },
+      { answerKey: "quizQuestions.q3_answer6", associatedNailShape: "Stiletto" },
+      { answerKey: "quizQuestions.q3_answer7", associatedNailShape: "Ballerina" },
+      { answerKey: "quizQuestions.q3_answer8", associatedNailShape: "Coffin" }
     ]
   },
   {
     id: "q4",
-    questionText: "What is a piece of clothing you really love to wear? (And wish you could wear it every day)",
+    questionKey: "quizQuestions.q4_question",
     answers: [
-      { answerText: "A big cozy scarf", associatedNailShape: "Round" },
-      { answerText: "High heels, especially red or black ones", associatedNailShape: "Stiletto" },
-      { answerText: "A comfortable hoodie", associatedNailShape: "Squoval" },
-      { answerText: "A flowy dress", associatedNailShape: "Almond" },
-      { answerText: "A Y2K tube top", associatedNailShape: "Coffin" },
-      { answerText: "A good fitting monochrome blouse and trousers set", associatedNailShape: "Square" },
-      { answerText: "Anything 60's or 70's fashion inspired", associatedNailShape: "Oval" },
-      { answerText: "An oversized sweater which is so big that I could live in it", associatedNailShape: "Ballerina" }
+      { answerKey: "quizQuestions.q4_answer1", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q4_answer2", associatedNailShape: "Stiletto" },
+      { answerKey: "quizQuestions.q4_answer3", associatedNailShape: "Squoval" },
+      { answerKey: "quizQuestions.q4_answer4", associatedNailShape: "Almond" },
+      { answerKey: "quizQuestions.q4_answer5", associatedNailShape: "Coffin" },
+      { answerKey: "quizQuestions.q4_answer6", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q4_answer7", associatedNailShape: "Oval" },
+      { answerKey: "quizQuestions.q4_answer8", associatedNailShape: "Ballerina" }
     ]
   },
   {
     id: "q5",
-    questionText: "Which nail length do you like?",
+    questionKey: "quizQuestions.q5_question",
     answers: [
-      { answerText: "As short as possible", associatedNailShape: "Round" },
-      { answerText: "I like them short. Medium only on special occasions", associatedNailShape: "Oval" },
-      { answerText: "Shorter would be better because I work a lot with my hands, but I would love medium nails if I could", associatedNailShape: "Squoval" },
-      { answerText: "Shorter if I want a clean look, medium to long if I feel like it", associatedNailShape: "Square" },
-      { answerText: "I like medium nails the most", associatedNailShape: "Almond" },
-      { answerText: "Medium, but long would also be fine if it's a really simple design", associatedNailShape: "Ballerina" },
-      { answerText: "Medium is okay, but long is better I think", associatedNailShape: "Coffin" },
-      { answerText: "Long at least. XXL would be better", associatedNailShape: "Stiletto" }
+      { answerKey: "quizQuestions.q5_answer1", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q5_answer2", associatedNailShape: "Oval" },
+      { answerKey: "quizQuestions.q5_answer3", associatedNailShape: "Squoval" },
+      { answerKey: "quizQuestions.q5_answer4", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q5_answer5", associatedNailShape: "Almond" },
+      { answerKey: "quizQuestions.q5_answer6", associatedNailShape: "Ballerina" },
+      { answerKey: "quizQuestions.q5_answer7", associatedNailShape: "Coffin" },
+      { answerKey: "quizQuestions.q5_answer8", associatedNailShape: "Stiletto" }
     ]
   },
   {
     id: "q6",
-    questionText: "How would you describe your hand shape?",
+    questionKey: "quizQuestions.q6_question",
     answers: [
-      { answerText: "Small hand, short fingers", associatedNailShape: "Round" },
-      { answerText: "Small hand, long fingers", associatedNailShape: "Oval" },
-      { answerText: "Round hand, short fingers", associatedNailShape: "Square" },
-      { answerText: "Round hand, long fingers", associatedNailShape: "Ballerina" },
-      { answerText: "Average hand, long fingers", associatedNailShape: "Almond" },
-      { answerText: "Average hand, short fingers", associatedNailShape: "Coffin" },
-      { answerText: "Rectangular hand, short fingers", associatedNailShape: "Stiletto" },
-      { answerText: "Rectangular hand, long fingers", associatedNailShape: "Squoval" }
+      { answerKey: "quizQuestions.q6_answer1", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q6_answer2", associatedNailShape: "Oval" },
+      { answerKey: "quizQuestions.q6_answer3", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q6_answer4", associatedNailShape: "Ballerina" },
+      { answerKey: "quizQuestions.q6_answer5", associatedNailShape: "Almond" },
+      { answerKey: "quizQuestions.q6_answer6", associatedNailShape: "Coffin" },
+      { answerKey: "quizQuestions.q6_answer7", associatedNailShape: "Stiletto" },
+      { answerKey: "quizQuestions.q6_answer8", associatedNailShape: "Squoval" }
     ]
   },
   {
     id: "q7",
-    questionText: "Do you use your hands often?",
+    questionKey: "quizQuestions.q7_question",
     answers: [
-      { answerText: "Yes, I work hard with my hands every day", associatedNailShape: "Squoval" },
-      { answerText: "I use them for keyboards, documents, average to minor household duties", associatedNailShape: "Square" },
-      { answerText: "Yes I do but not too hard", associatedNailShape: "Round" },
-      { answerText: "Not really, just minor everyday stuff", associatedNailShape: "Almond" },
-      { answerText: "I do, but I don't mind doing them with nails on", associatedNailShape: "Ballerina" },
-      { answerText: "No, but if I do, nails wouldn't stop me doing whatever I want", associatedNailShape: "Stiletto" },
-      { answerText: "No", associatedNailShape: "Coffin" },
-      { answerText: "It really depends, but long nails would annoy me if I have a lot to do", associatedNailShape: "Oval" }
+      { answerKey: "quizQuestions.q7_answer1", associatedNailShape: "Squoval" },
+      { answerKey: "quizQuestions.q7_answer2", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q7_answer3", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q7_answer4", associatedNailShape: "Almond" },
+      { answerKey: "quizQuestions.q7_answer5", associatedNailShape: "Ballerina" },
+      { answerKey: "quizQuestions.q7_answer6", associatedNailShape: "Stiletto" },
+      { answerKey: "quizQuestions.q7_answer7", associatedNailShape: "Coffin" },
+      { answerKey: "quizQuestions.q7_answer8", associatedNailShape: "Oval" }
     ]
   },
   {
     id: "q8",
-    questionText: "How often do you want to come over for a fresh set?",
+    questionKey: "quizQuestions.q8_question",
     answers: [
-      { answerText: "Every 3 weeks", associatedNailShape: "Stiletto" },
-      { answerText: "Every 4 weeks", associatedNailShape: "Almond" },
-      { answerText: "As soon as my packed calendar lets me", associatedNailShape: "Square" },
-      { answerText: "I will try to come regularly but most probably somewhere between 4-5 weeks", associatedNailShape: "Squoval" },
-      { answerText: "As soon as my nails look really grown out", associatedNailShape: "Round" },
-      { answerText: "As soon as I want, sometimes I don't want to wear nails for months", associatedNailShape: "Oval" },
-      { answerText: "It depends on how long my nails are. If it's a short set, I will come later", associatedNailShape: "Ballerina" },
-      { answerText: "As soon as I see a good nail inspo online, I cannot hold myself back to get a new set", associatedNailShape: "Coffin" }
+      { answerKey: "quizQuestions.q8_answer1", associatedNailShape: "Stiletto" },
+      { answerKey: "quizQuestions.q8_answer2", associatedNailShape: "Almond" },
+      { answerKey: "quizQuestions.q8_answer3", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q8_answer4", associatedNailShape: "Squoval" },
+      { answerKey: "quizQuestions.q8_answer5", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q8_answer6", associatedNailShape: "Oval" },
+      { answerKey: "quizQuestions.q8_answer7", associatedNailShape: "Ballerina" },
+      { answerKey: "quizQuestions.q8_answer8", associatedNailShape: "Coffin" }
     ]
   },
   {
     id: "q9",
-    questionText: "How would you describe your vibe?",
+    questionKey: "quizQuestions.q9_question",
     answers: [
-      { answerText: "Edgy. I'm unapologetically myself.", associatedNailShape: "Coffin" },
-      { answerText: "Prepared. I always have a plan for everything.", associatedNailShape: "Square" },
-      { answerText: "Natural. I'm not picky with anything and you can always count on me.", associatedNailShape: "Round" },
-      { answerText: "Chill. I don't get irritated easily.", associatedNailShape: "Oval" },
-      { answerText: "Active. I have an active lifestyle and I love it.", associatedNailShape: "Squoval" },
-      { answerText: "Soft. I'm creative, feminine, and love cozy, girly things.", associatedNailShape: "Almond" },
-      { answerText: "Iconic. I'm bold and like to feel sexy.", associatedNailShape: "Stiletto" },
-      { answerText: "Cozy. I love a good movie or book with my favourite soul food on the side.", associatedNailShape: "Ballerina" }
+      { answerKey: "quizQuestions.q9_answer1", associatedNailShape: "Coffin" },
+      { answerKey: "quizQuestions.q9_answer2", associatedNailShape: "Square" },
+      { answerKey: "quizQuestions.q9_answer3", associatedNailShape: "Round" },
+      { answerKey: "quizQuestions.q9_answer4", associatedNailShape: "Oval" },
+      { answerKey: "quizQuestions.q9_answer5", associatedNailShape: "Squoval" },
+      { answerKey: "quizQuestions.q9_answer6", associatedNailShape: "Almond" },
+      { answerKey: "quizQuestions.q9_answer7", associatedNailShape: "Stiletto" },
+      { answerKey: "quizQuestions.q9_answer8", associatedNailShape: "Ballerina" }
     ]
   }
 ];
 
-export const NAIL_SHAPE_DESCRIPTIONS: { [key: string]: string } = {
-  Almond: "Elegant and sophisticated, the almond shape elongates fingers and adds a touch of classic glamour, perfect for a refined look.",
-  Square: "Strong and modern, square nails offer a clean, crisp edge that's both practical and stylish, ideal for those who prefer a bold, structured aesthetic.",
-  Squoval: "The best of both worlds, squoval nails combine the strength of square with the softness of oval, offering a versatile and universally flattering shape.",
-  Coffin: "Dramatic and chic, coffin (or ballerina) nails are tapered with a flat tip, exuding confidence and a high-fashion appeal for the trendsetter.",
-  Stiletto: "Bold and edgy, stiletto nails are sharply pointed, making a powerful statement and creating the illusion of extra-long, slender fingers.",
-  Oval: "Classic and graceful, oval nails are soft and feminine, flattering most hand shapes by elongating fingers with a gentle, rounded curve.",
-  Round: "Simple and practical, round nails are low-maintenance and durable, perfect for those who prefer a natural look and active lifestyle.",
-  Ballerina: "Similar to coffin but often slightly more tapered, ballerina nails are elegant and sophisticated, offering a chic, elongated look with a flat, squared-off tip.",
+export const NAIL_SHAPE_DESCRIPTION_KEYS: { [key: string]: string } = {
+  Almond: "nailShapes.Almond_description",
+  Square: "nailShapes.Square_description",
+  Squoval: "nailShapes.Squoval_description",
+  Coffin: "nailShapes.Coffin_description",
+  Stiletto: "nailShapes.Stiletto_description",
+  Oval: "nailShapes.Oval_description",
+  Round: "nailShapes.Round_description",
+  Ballerina: "nailShapes.Ballerina_description",
 };
